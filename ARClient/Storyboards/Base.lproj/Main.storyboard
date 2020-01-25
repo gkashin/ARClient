@@ -11,7 +11,7 @@
         <!--Authorization-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ARCompetition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ARClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,6 @@
                                         <state key="normal" title="Sign In"/>
                                         <connections>
                                             <action selector="signInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="tWI-Q8-n1o"/>
-                                            <segue destination="5QH-es-wLL" kind="showDetail" identifier="SignInSegue" id="ydT-nF-xzN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -53,6 +52,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="6gX-Ge-56x" id="8Gj-lu-mjc"/>
                         <outlet property="passwordTextField" destination="D0y-a4-xcU" id="RQp-NK-N9C"/>
+                        <segue destination="5QH-es-wLL" kind="showDetail" identifier="SignInSegue" id="kOp-lW-LxO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -99,6 +99,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Brq-JF-dhy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vx1-Tb-cSt">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
