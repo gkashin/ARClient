@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  ARClient
 //
 //  Created by Георгий Кашин on 24.01.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     // MARK: - IB Outlets
     @IBOutlet weak var loginTextField: UITextField!
@@ -18,10 +18,14 @@ class ViewController: UIViewController {
     @IBAction func signInButtonPressed() {
         guard let username = loginTextField.text,
             let password = passwordTextField.text else { return }
-        NetworkManager.shared.checkLogin(for: username, with: password) { status in
+        NetworkManager.shared.checkLogin(for: username, with: password) { (status, isAdmin) in
             if status == "ok" {
+                if isAdmin != nil {
+                    User.isAdmin = isAdmin!
+                    print(User.isAdmin)
+                }
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "SignInSegue", sender: nil)
+//                    self.performSegue(withIdentifier: "SignInSegue", sender: nil)
                 }
             }
         }
