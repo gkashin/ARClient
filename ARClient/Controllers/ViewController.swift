@@ -20,14 +20,15 @@ class ViewController: UIViewController {
             let password = passwordTextField.text else { return }
         NetworkManager.shared.checkLogin(for: username, with: password) { status in
             if status == "ok" {
-                self.performSegue(withIdentifier: "SignInSegue", sender: nil)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "SignInSegue", sender: nil)
+                }
             }
         }
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
     }
 }
 

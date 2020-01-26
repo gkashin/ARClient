@@ -13,30 +13,33 @@ class NetworkManager {
     
     private init() {}
     
-    let baseURL = URL(string: "https://localhost:8080")!
+    let baseURL = URL(string: "http://localhost:8080")!
     
     func checkLogin(for username: String, with password: String, completion: @escaping (String?) -> Void) {
         let loginURL = baseURL.appendingPathComponent("login")
-        print(loginURL)
+        
         var request = URLRequest(url: loginURL)
-        
+
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let data: Data? = "username=\(username)&password=\(password)".data(using: .utf8) ?? nil
         
-        let data: [String: String] = [username: password]
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try? jsonEncoder.encode(data)
-        
-        request.httpBody = jsonData
-        
+        request.httpBody = data
+
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            let jsonDecoder = JSONDecoder()
-            if let data = data,
-                let token = try? jsonDecoder.decode(Token.self, from: data) {
-                completion(token.status)
-            } else {
-                completion(nil)
+            guard let data = data else {
+                print(#line, #function, "Couldn't get data")
+                return completion(nil)
             }
+    
+            guard let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                print(#line, #function, "Couldn't deserialize data from \(data)")
+                return completion(nil)
+            }
+            
+            let status = jsonDictionary["status"] as? String
+            completion(status)
         }
         
         task.resume()
