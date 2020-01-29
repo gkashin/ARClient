@@ -18,6 +18,8 @@
 		5B2C4E4123DDF55300708A59 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2C4E4023DDF55300708A59 /* Model.swift */; };
 		5B2C4E4323DDFB4200708A59 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2C4E4223DDFB4200708A59 /* UsersTableViewController.swift */; };
 		5B2C4E4523DDFB5000708A59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2C4E4423DDFB5000708A59 /* User.swift */; };
+		5B366A3523DEF91A00AC36AC /* Logged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B366A3423DEF91A00AC36AC /* Logged.swift */; };
+		5BE3915923E1A60D00020F17 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3915823E1A60D00020F17 /* Object.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5B2C4E4023DDF55300708A59 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5B2C4E4223DDFB4200708A59 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		5B2C4E4423DDFB5000708A59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5B366A3423DEF91A00AC36AC /* Logged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logged.swift; sourceTree = "<group>"; };
+		5BE3915823E1A60D00020F17 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,9 @@
 		5B2C4E3E23DDF53F00708A59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B366A3423DEF91A00AC36AC /* Logged.swift */,
 				5B2C4E4023DDF55300708A59 /* Model.swift */,
+				5BE3915823E1A60D00020F17 /* Object.swift */,
 				5B2C4E4423DDFB5000708A59 /* User.swift */,
 			);
 			path = Models;
@@ -201,7 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE3915923E1A60D00020F17 /* Object.swift in Sources */,
 				5B2C4E3823DCC9BD00708A59 /* NetworkManager.swift in Sources */,
+				5B366A3523DEF91A00AC36AC /* Logged.swift in Sources */,
 				5B2C4CCA23DB63FA00708A59 /* LoginViewController.swift in Sources */,
 				5B2C4CC623DB63FA00708A59 /* AppDelegate.swift in Sources */,
 				5B2C4E4123DDF55300708A59 /* Model.swift in Sources */,

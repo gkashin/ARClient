@@ -18,16 +18,13 @@ class LoginViewController: UIViewController {
     @IBAction func signInButtonPressed() {
         guard let username = loginTextField.text,
             let password = passwordTextField.text else { return }
-        NetworkManager.shared.checkLogin(for: username, with: password) { (status, isAdmin) in
-            if status == "ok" {
-                if isAdmin != nil {
-                    User.isAdmin = isAdmin!
-                    print(User.isAdmin)
-                }
-                DispatchQueue.main.async {
-//                    self.performSegue(withIdentifier: "SignInSegue", sender: nil)
-                }
+        NetworkManager.shared.checkLogin(for: username, with: password) { user in
+            guard let user = user else {
+                print(#line, #function, "User is nil")
+                return
             }
+            
+            print("\(user.username) + \(user.isAdmin)")
         }
     }
     

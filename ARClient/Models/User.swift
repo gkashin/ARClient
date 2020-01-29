@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User {
-    let name: String
-    static var isAdmin = false
+struct User: Codable {
+    var username: String
+    var isAdmin: Bool
 }
