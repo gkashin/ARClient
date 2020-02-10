@@ -1,2 +1,2 @@
 # ARClient
-Client app with authorization
+Client app with Basic Authorization
